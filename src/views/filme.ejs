@@ -15,17 +15,19 @@
     <hr>
     
     <div>
-        <p> <%=filme.title%> </p>
-        <p> <%=filme.director%> </p>
-        <p> <%=filme.release_date%></p>
-        <div>
-            Personagens:
-            <ul>
-                <% for(filme of filme.characters_info){%>
-                    <li><%=filme.name%></li>
-                <% } %>
-            </ul>
-        </div>
+        <% if(filme) {%>
+            <p> <%=filme.title%> </p>
+            <p> <%=filme.director%> </p>
+            <p> <%=filme.release_date%></p>
+            <div>
+                Personagens:
+                <ul>
+                    <% for(filme of filme.characters_info){%>
+                        <li><%=filme.name%></li>
+                    <% } %>
+                </ul>
+            </div>
+        <% } %
     </div>
 
     <hr>

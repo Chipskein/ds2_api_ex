@@ -12,13 +12,12 @@ class MoviesController{
     }
     async showMovie(req,res,next){
         const { id }=req.params;
-        const response=await swapi.getMovie(id);
-        const filme=response;
+        const filme=await swapi.getMovie(id);
         const characters_info=[];
         for(let character_url of filme.characters){
             let id_char=character_url.split('/')[5];
-            const response2=await swapi.getAllCharacterInfo(id_char);
-            characters_info.push(response2);
+            const ch_info=await swapi.getAllCharacterInfo(id_char);
+            characters_info.push(ch_info);
         }
         filme.characters_info=characters_info;
         return res.render('filme',{ filme });

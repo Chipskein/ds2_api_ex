@@ -6,8 +6,7 @@ module.exports={
             const urlBusca =`https://swapi.dev/api/films/`;
             const { data } = await axios.get(urlBusca);
             return data;
-        }
-        catch(error){
+        } catch(error){
             LogServices.error(error.message);
             return { result:[] };
         }
@@ -17,10 +16,9 @@ module.exports={
             const urlBusca =`https://swapi.dev/api/people/${id}`;
             const { data } = await axios.get(urlBusca);
             return data;
-        }
-        catch(error){
+        } catch(error){
             LogServices.error(error.message);
-            return { result:[] };
+            return null;
         }
     },
     getMovie:async (id)=>{
@@ -28,10 +26,9 @@ module.exports={
             const urlBusca =`https://swapi.dev/api/films/${id}`;
             const { data } = await axios.get(urlBusca);
             return data;
-        }
-        catch(error){
+        } catch(error){
             LogServices.error(error.message);
-            return { result:[] };
+            return null;
         }
     },
 }
