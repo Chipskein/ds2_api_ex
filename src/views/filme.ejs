@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>SWAPI | INTEGRATION</title>
+</head>
+<body>
+    <div align="center">
+        <img src="/img/favicon.ico" alt="swapi icon">
+    </div>
+    <hr>
+    
+    <div>
+        <p> <%=filme.title%> </p>
+        <p> <%=filme.director%> </p>
+        <p> <%=filme.release_date%></p>
+        <div>
+            Personagens:
+            <ul>
+                <% for(filme of filme.characters_info){%>
+                    <li><%=filme.name%></li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+
+    <hr>
+    <div>
+        <h6 align="center">Feito Por Bruno Ariel</h6>
+    </div>
+</body>
+</html>
